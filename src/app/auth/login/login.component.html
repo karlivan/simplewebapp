@@ -1,0 +1,21 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+      <div class="row" *ngIf="authError">
+        <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+      </div>
+
+          <input ngModel #email="ngModel" name="email" type="email" class="form-control fadeIn first" placeholder="Email Address">
+          <input ngModel #password="ngModel" name="password" type="password" class="form-control fadeIn second" placeholder="Password">
+      
+          <input type="submit" class="btn btn-primary" value="Login">
+
+        <div id="formFooter">
+          <a class="underlineHover" href="/register">Don't have an account? Register here</a>
+        </div>
+
+    </form>
+  </div>
+</div>

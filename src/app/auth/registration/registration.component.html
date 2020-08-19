@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="col-12">
+      <h4>Register Page</h4>
+    </div>
+  
+    <div class="col-12">
+      <div class="row" *ngIf="authError">
+        <div class="col-12 alert alert-danger">
+          {{ authError?.message }}
+        </div>
+      </div>
+    </div>
+      <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)">
+            <input ngModel #firstname="ngModel" name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+            <input ngModel #lastname="ngModel" name="lastName" type="text" class="form-control" id="lastName" value="" placeholder="Last Name">
+            <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Email Address">
+              <input ngModel #password="ngModel" name="password" type="password" class="form-control" placeholder="Password">
+              <input name="password" type="password" class="form-control" placeholder="Confirm Password">
+              <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
+  </div>
+</div>

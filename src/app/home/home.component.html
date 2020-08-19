@@ -1,0 +1,11 @@
+<div class = "wrapper fadeInDown">
+    <div id="formContent">
+    <h4 class="mt-4 fadeInDown">Welcome!</h4>
+    
+    <p *ngIf="user">Logged in as: {{ user?.email }} - {{ user?.displayName }}</p>
+
+    <input type="submit" class="btn btn-primary mr-2 fadeIn first" *ngIf="!user" (click)="register()" value="Register">
+    <input type="submit" class="btn btn-primary fadeIn first" *ngIf="user" (click)="logout()" value="Logout">
+    <input type="submit" class="btn btn-primary fadeIn second" *ngIf="!user" (click)="login()" value="Login">
+    </div>
+</div>
